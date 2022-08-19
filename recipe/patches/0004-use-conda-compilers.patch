@@ -9,3 +9,13 @@
          pro_lines.append('CONFIG += ordered nostrip')
          pro_lines.append('SUBDIRS = {}'.format(' '.join(subdirs)))
  
+@@ -359,6 +361,8 @@
+                             buildable.target))
+ 
+         pro_lines = ['TEMPLATE = lib']
++        pro_lines.append('QMAKE_CC = ' + os.environ.get('CC'))
++        pro_lines.append('QMAKE_CXX = ' + os.environ.get('CXX'))
+ 
+         pro_lines.append('CONFIG += warn_on')
+ 
+
